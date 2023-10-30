@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -32,23 +38,40 @@
         <option value="Sydney">Tokyo</option>
         <option value="Barcelona">Auckland</option>
       </select>
-      <div class="row">
-        <div class="col-md-6">
+      <div class="city">
+        <div>
           <h2 id="LosAngeles">Los Angeles</h2>
-          <div class="time">22.05</div>
+
           <div class="date">Mon, Oct 30</div>
+        </div>
+        <div class="time">22.05<small> AM</small></div>
+      </div>
+
+      <div class="city">
+        <div>
           <h2 id="London">London</h2>
-          <div class="time">22.05</div>
+
           <div class="date">Mon, Oct 30</div>
         </div>
-        <div class="col-md-6">
-          <h2 id="Delhi">Dehli</h2>
-          <div class="time">22.05</div>
-          <div class="date">Mon, Oct 30</div>
-          <h2 id="Sydney">Sydney</h2>
-          <div class="time">22.05</div>
+        <div class="time">22.05<small> AM</small></div>
+      </div>
+
+      <div class="city">
+        <div>
+          <h2 id="London">Dehli</h2>
+
           <div class="date">Mon, Oct 30</div>
         </div>
+        <div class="time">22.05<small> AM</small></div>
+      </div>
+
+      <div class="city">
+        <div>
+          <h2 id="London">Sydney</h2>
+
+          <div class="date">Mon, Oct 30</div>
+        </div>
+        <div class="time">22.05 <small> AM</small></div>
       </div>
     </div>
 
@@ -57,7 +80,7 @@
       <a href="https://github.com/MatildaHJ/world-clock" target="_blank"
         >open source code</a
       >
-      by Matilda Larsson
+      by <strong>Matilda Larsson</strong>
     </footer>
     <script src="src/index.js"></script>
   </body>
