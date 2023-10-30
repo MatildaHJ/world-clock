@@ -1,4 +1,4 @@
-function updateLosAngelesTime() {
+function updateTime() {
   let losAngelesElement = document.querySelector("#losAngeles");
   let losAngelesDateElement = losAngelesElement.querySelector(".date");
   let losAngelesTimeElement = losAngelesElement.querySelector(".time");
@@ -8,11 +8,7 @@ function updateLosAngelesTime() {
   losAngelesTimeElement.innerHTML = losAngelesTime.format(
     "hh:mm:ss [<small>] A[</small>]"
   );
-}
 
-setInterval(updateLosAngelesTime, 200);
-
-function updateLondonTime() {
   let londonElement = document.querySelector("#london");
   let londonDateElement = londonElement.querySelector(".date");
   let londonTimeElement = londonElement.querySelector(".time");
@@ -22,11 +18,7 @@ function updateLondonTime() {
   londonTimeElement.innerHTML = londonTime.format(
     "hh:mm:ss [<small>] A[</small>]"
   );
-}
 
-setInterval(updateLondonTime, 200);
-
-function updateBangkokTime() {
   let bangkokElement = document.querySelector("#bangkok");
   let bangkokDateElement = bangkokElement.querySelector(".date");
   let bangkokTimeElement = bangkokElement.querySelector(".time");
@@ -36,11 +28,7 @@ function updateBangkokTime() {
   bangkokTimeElement.innerHTML = bangkokTime.format(
     "hh:mm:ss [<small>] A[</small>]"
   );
-}
 
-setInterval(updateBangkokTime, 200);
-
-function updateSydneyTime() {
   let sydneyElement = document.querySelector("#sydney");
   let sydneyDateElement = sydneyElement.querySelector(".date");
   let sydneyTimeElement = sydneyElement.querySelector(".time");
@@ -51,5 +39,24 @@ function updateSydneyTime() {
     "hh:mm:ss [<small>] A[</small>]"
   );
 }
+function updateCity(event) {
+  let cityTimezone = event.target.value;
+  let cityName = cityTimezone.replace("_", " ").split("/")[1];
+  let cityTime = moment().tz(cityTimezone);
+  let citiesElement = document.querySelector("#cities");
+  citiesElement.innerHTML = `
+      <div class="city">
+        <div>
+          <h2>${cityName}</h2>
 
-setInterval(updateSydneyTime, 200);
+          <div class="date">${cityTime.format("ddd, MMM D")}</div>
+        </div>
+        <div class="time">${cityTime.format(
+          "hh:mm:ss"
+        )}<small>${cityTime.format(" A")}</small></div>
+      </div>`;
+}
+setInterval(updateTime, 200);
+
+let citiesSelectElement = document.querySelector("#city-select");
+citiesSelectElement.addEventListener("change", updateCity);
