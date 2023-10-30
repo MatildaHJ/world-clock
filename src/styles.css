@@ -2,7 +2,7 @@ body {
   background: #fbf2d5;
 }
 
-h1,
+.container,
 footer {
   text-align: center;
 }
